@@ -1,0 +1,59 @@
+core/automaticUpdates:
+  manual: |
+    Currently, updates are checked for every hour. This frequency was chosen to stay up to date with the ever-changing landscape of malware/tracker/phishing domains managed by the various filter lists.
+
+dns/listenAddress:
+  manual: |
+    `localhost` ist a special value, which will make the Portmaster listen on both `127.0.0.1:53` and `::1`.
+    The default value shown is used on Linux, Windows uses <code>0.0.0.0:53</code> as the default value.
+
+filter/defaultAction:
+  layered: true
+
+filter/blockInternet:
+  layered: true
+
+filter/blockLAN:
+  layered: true
+
+filter/blockLocal:
+  layered: true
+
+filter/blockP2P:
+  layered: true
+
+filter/blockInbound:
+  layered: true
+
+filter/endpoints:
+  layered: true
+
+filter/serviceEndpoints:
+  layered: true
+
+filter/lists:
+  layered: true
+
+filter/includeSubdomains:
+  layered: true
+
+filter/includeCNAMEs:
+  layered: true
+
+filter/removeOutOfScopeDNS:
+  layered: true
+
+filter/removeBlockedDNS:
+  layered: true
+
+filter/domainHeuristics:
+  layered: true
+
+filter/preventBypassing:
+  layered: true
+
+filter/disableAutoPermit:
+  layered: true
+
+spn/useSPN:
+  layered: true

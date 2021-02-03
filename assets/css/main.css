@@ -222,7 +222,40 @@ h1:hover .inlineref, h2:hover .inlineref, h3:hover .inlineref, h4:hover .inliner
 
 /* Setting list */
 
+.settingslist .key {
+  opacity: 0.5;
+}
 
+.settingslist .advanced {
+  color: orange;
+}
+.settingslist .beta {
+  color: orange;
+}
+
+.settingslist .developer {
+  color: red;
+}
+.settingslist .experimental {
+  color: red;
+}
+
+.settingslist .restart {
+  color: blue;
+}
+.settingslist .stackable {
+  color: blue;
+}
+
+.settingslist .default {
+  color: blue;
+}
+
+.settingslist .values {
+  padding: 15px;
+  border-radius: 3px;
+  background-color: #f0f0f0;
+}
 
 /* Github flavour */
 
