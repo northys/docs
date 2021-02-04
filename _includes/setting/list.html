@@ -1,5 +1,4 @@
 <div class="settingslist">
-
 {% for option in site.data.config-options %}
   {% if
     option.Key contains include.prefix and
@@ -12,54 +11,57 @@
       {{ option.Name }}
       <small>
         {% if site.data.config-manual[option.Key].layered %}
-          &nbsp;&nbsp;
-          <span class="layered">
+          <span class="setting-badge">
             <i class="fa fa-user-circle"></i>
-            Configurable per App
+            Per App
           </span>
         {% else %}
-          &nbsp;&nbsp;
-          <span class="global">
+          <span class="setting-badge">
             <i class="fa fa-globe"></i>
-            Global Only
+            Global
           </span>
         {% endif %}
 
         {% if option.RequiresRestart %}
-          &nbsp;&nbsp;
-          <span class="restart">
+          <span class="setting-badge info">
             <i class="fa fa-refresh"></i>
             Requires Restart
           </span>
         {% endif %}
 
         {% if option.Annotations["safing/portbase:options:stackable"] %}
-          &nbsp;&nbsp;
-          <span class="stackable">
+          <span class="setting-badge info">
             <i class="fa fa-bars"></i>
             Stackable
           </span>
         {% endif %}
 
         {% if option.ExpertiseLevel == 1 %}
-          &nbsp;&nbsp;
-          <span class="advanced">Advanced</span>
+          <span class="setting-badge warn">
+            <i class="fa fa-wrench"></i>
+            Advanced
+          </span>
         {% elsif option.ExpertiseLevel == 2 %}
-          &nbsp;&nbsp;
-          <span class="developer">Developer</span>
+          <span class="setting-badge dev">
+            <i class="fa fa-flask"></i>
+            Developer
+          </span>
         {% endif %}
 
         {% if option.ReleaseLevel == 1 %}
-          &nbsp;&nbsp;
-          <span class="beta">Beta</span>
+          <span class="setting-badge warn">
+            <i class="fa fa-wrench"></i>
+            Beta
+          </span>
         {% elsif option.ReleaseLevel == 2 %}
-          &nbsp;&nbsp;
-          <span class="experimental">Experimental</span>
+          <span class="setting-badge dev">
+            <i class="fa fa-flask"></i>
+            Experimental
+          </span>
         {% endif %}
 
         {% if include.dev %}
-          &nbsp;&nbsp;
-          <span class="key">
+          <span class="setting-badge key">
             <i class="fa fa-code"></i>
             {{ option.Key }}
           </span>
@@ -70,11 +72,11 @@
     
     <!-- Explanation -->
     <p>
-      {{ option.Description }}
+      {{ option.Description | markdownify }}
     </p>
     {% if include.manual and site.data.config-manual[option.Key] %}
     <p>
-      {{ site.data.config-manual[option.Key].manual }}
+      {{ site.data.config-manual[option.Key].manual | markdownify }}
     </p>
     {% endif %}
 
@@ -104,7 +106,9 @@
         {% when 2 %}
           <code>{{ option.DefaultValue | join: ", " }}</code> (string array)
         {% when 3 %}
-          <code>{{ option.DefaultValue | default: 0 }}</code> (integer)
+          <code>{{ option.DefaultValue | default: 0 }}</code>
+          {{ option.Annotations["safing/portbase:ui:unit"] }}
+          (integer)
         {% when 4 %}
           <code>{{ option.DefaultValue | default: false }}</code> (boolean)
         {% endcase %}
@@ -117,7 +121,6 @@
         </p>
       {% endif %}
     </div>
-  </div>
   {% endif %}
 {% endfor %}
 </div>

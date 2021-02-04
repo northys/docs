@@ -165,6 +165,35 @@ h1:hover .inlineref, h2:hover .inlineref, h3:hover .inlineref, h4:hover .inliner
   opacity: 1;
 }
 
+/* Setting badge */
+
+.setting-badge {
+  margin: 0 2px;
+  padding: 2px 8px;
+  background-color: rgba(0,0,0,0.07);
+  border-radius: 0.4rem;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  /* border-right: 1px solid rgba(31,167,135,0.5); */
+  /* border-bottom: 1px solid rgba(31,167,135,1); */
+}
+
+.setting-badge.info {
+  color: blue;
+}
+
+.setting-badge.warn {
+  color: orange;
+}
+
+.setting-badge.dev {
+  color: red;
+}
+
+.setting-badge.key {
+  opacity: 0.8;
+}
+
 /* Setting ref */
 
 .settingsref span {

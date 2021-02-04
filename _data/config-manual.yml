@@ -1,11 +1,44 @@
+core/apiKeys:
+  manual: |
+    This is only needed if you want to grant 3rd party software access to the Portmaster, or if you want to remotely manage the Portmaster via a Webbrowser.
+    Be reminded that you are fully responsible yourself for the security and all implications of remote access.
+
 core/automaticUpdates:
   manual: |
     Currently, updates are checked for every hour. This frequency was chosen to stay up to date with the ever-changing landscape of malware/tracker/phishing domains managed by the various filter lists.
 
+core/devMode:
+  manual: |
+    Do not ever enable this in production, as anything will be able to fully control the Portmaster.
+
+core/enableProcessDetection:
+  manual: |
+    Do not enable unless for debugging purposes.
+
+core/expertiseLevel:
+  manual: |
+    Settings on this page are marked with <span class="setting-badge warn"><i class="fa fa-wrench"></i> Advanced</span> and <span class="setting-badge dev"><i class="fa fa-flask"></i> Developer</span> accordingly.
+
+core/listenAddress:
+  manual: |
+    If you intend to access the Portmaster UI remotely, you can set this to `0.0.0.0:817`. [API Keys](#core/apiKeys) can be configured for access authentication. In addition to that, you will need to enable incoming connections in the Portmaster's own App Settings. Be reminded that you are fully responsible yourself for the security and all implications of remote access.
+
+core/networkService:
+  manual: |
+    This allows you to use the Portmaster as a network-wide privacy system, similar to a Pi-Hole. This possibility exists mainly for testing and is not officially supported. You are free to tinker around with it, though.
+
+core/releaseChannel:
+  manual: |
+    Until the Portmaster reaches the v1.0 stable release, all releases are done in the stable channel only. After that, we will open the beta channel for testing new features.
+
+core/releaseLevel:
+  manual: |
+    Settings on this page are marked with <span class="setting-badge warn"><i class="fa fa-wrench"></i> Beta</span> and <span class="setting-badge dev"><i class="fa fa-flask"></i> Experimental</span> accordingly.
+
 dns/listenAddress:
   manual: |
-    `localhost` ist a special value, which will make the Portmaster listen on both `127.0.0.1:53` and `::1`.
-    The default value shown is used on Linux, Windows uses <code>0.0.0.0:53</code> as the default value.
+    `localhost` is a special value, which will make the Portmaster listen on both `127.0.0.1:53` and `::1`.
+    The default value shown is used on Linux, Windows uses `0.0.0.0:53` as the default value, as requests there are redirected to the same interface, not the loopback device.
 
 filter/defaultAction:
   layered: true

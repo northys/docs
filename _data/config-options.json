@@ -1,5 +1,21 @@
 [
   {
+    "Name": "API Keys",
+    "Key": "core/apiKeys",
+    "Description": "Define API keys for priviledged access to the API. Every entry is a separate API key with respective permissions. Format is `\u003ckey\u003e?read=\u003cperm\u003e\u0026write=\u003cperm\u003e`. Permissions are `anyone`, `user` and `admin`, and may be omitted.",
+    "Help": "",
+    "OptType": 2,
+    "ExpertiseLevel": 2,
+    "ReleaseLevel": 0,
+    "RequiresRestart": false,
+    "DefaultValue": [],
+    "ValidationRegex": "",
+    "Annotations": {
+      "safing/portbase:ui:category": "Development",
+      "safing/portbase:ui:order": 514
+    }
+  },
+  {
     "Name": "Automatic Updates",
     "Key": "core/automaticUpdates",
     "Description": "Enable automatic checking, downloading and applying of updates. This affects all kinds of updates, including intelligence feeds and broadcast notifications.",
@@ -18,7 +34,7 @@
   {
     "Name": "Development Mode",
     "Key": "core/devMode",
-    "Description": "In Development Mode, security restrictions are lifted/softened to enable easier access to Portmaster for debugging and testing purposes.",
+    "Description": "In Development Mode, security restrictions are lifted/softened to enable unrestricted access for debugging and testing purposes.",
     "Help": "",
     "OptType": 4,
     "ExpertiseLevel": 2,
@@ -206,22 +222,22 @@
     "PossibleValues": [
       {
         "Name": "Off",
-        "Description": "",
+        "Description": "Setting is always disabled.",
         "Value": 0
       },
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -330,18 +346,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -364,18 +380,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -398,18 +414,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -428,7 +444,7 @@
     "ExpertiseLevel": 0,
     "ReleaseLevel": 0,
     "RequiresRestart": false,
-    "DefaultValue": 20,
+    "DefaultValue": 60,
     "ValidationRegex": "",
     "Annotations": {
       "safing/portbase:ui:category": "General",
@@ -469,18 +485,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -504,22 +520,22 @@
     "PossibleValues": [
       {
         "Name": "Off",
-        "Description": "",
+        "Description": "Setting is always disabled.",
         "Value": 0
       },
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -543,22 +559,22 @@
     "PossibleValues": [
       {
         "Name": "Off",
-        "Description": "",
+        "Description": "Setting is always disabled.",
         "Value": 0
       },
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -582,22 +598,22 @@
     "PossibleValues": [
       {
         "Name": "Off",
-        "Description": "",
+        "Description": "Setting is always disabled.",
         "Value": 0
       },
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -620,18 +636,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -688,18 +704,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -723,22 +739,22 @@
     "PossibleValues": [
       {
         "Name": "Off",
-        "Description": "",
+        "Description": "Setting is always disabled.",
         "Value": 0
       },
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -794,18 +810,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -828,23 +844,23 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
     "Annotations": {
-      "safing/portbase:ui:category": "Rules",
+      "safing/portbase:ui:category": "Filter Lists",
       "safing/portbase:ui:display-hint": "security level",
       "safing/portbase:ui:order": 35
     }
@@ -865,7 +881,7 @@
     ],
     "ValidationRegex": "^[a-zA-Z0-9\\-]+$",
     "Annotations": {
-      "safing/portbase:ui:category": "Rules",
+      "safing/portbase:ui:category": "Filter Lists",
       "safing/portbase:ui:display-hint": "filter list",
       "safing/portbase:ui:order": 34
     }
@@ -899,18 +915,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -933,18 +949,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
@@ -967,18 +983,18 @@
     "ValidationRegex": "^(7|6|4)$",
     "PossibleValues": [
       {
-        "Name": "Normal",
-        "Description": "",
+        "Name": "Trusted / Home Network",
+        "Description": "Setting is always enabled.",
         "Value": 7
       },
       {
-        "Name": "High",
-        "Description": "",
+        "Name": "Untrusted / Public Network",
+        "Description": "Setting is enabled in untrusted and dangerous networks.",
         "Value": 6
       },
       {
-        "Name": "Extreme",
-        "Description": "",
+        "Name": "Danger / Hacked Network",
+        "Description": "Setting is enabled only in dangerous networks.",
         "Value": 4
       }
     ],
